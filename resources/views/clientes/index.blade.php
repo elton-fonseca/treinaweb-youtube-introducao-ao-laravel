@@ -5,7 +5,7 @@
         <div class="overflow-x-auto">
             <div class="flex justify-between items-center mb-6 min-w-full">
                 <h2 class="text-2xl font-bold text-gray-800">Lista de Clientes</h2>
-                <a href="" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <a href="{{ route('clientes.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                     Novo Cliente
                 </a>
             </div>

@@ -37,7 +37,7 @@
                                     Editar
                                 </a>
                                 
-                                <form action="" method="POST" class="inline">
+                                <form action="{{ route('clientes.destroy', $cliente) }}" method="POST" class="inline">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded text-sm" onclick="return confirm('Tem certeza que deseja excluir este cliente?')">

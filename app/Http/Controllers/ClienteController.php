@@ -33,12 +33,13 @@ class ClienteController extends Controller
         $cliente->email = $request->email;
         $cliente->save();
 
-        return redirect()->route('clientes.index');
+        return redirect()->route('clientes.index')
+            ->with('success', 'Cliente criado com sucesso'); 
     }
 
     public function edit(int $client)
     {
-        $cliente = Client::find($client);
+        $cliente = Client::findOrFail($client);
 
         return view('clientes.edit', [
             'cliente' => $cliente
@@ -52,11 +53,21 @@ class ClienteController extends Controller
             'email' => ['required', 'email']
         ]);
         
-        $cliente = Client::find($client);
+        $cliente = Client::findOrFail($client);
         $cliente->nome = $request->nome;
         $cliente->email = $request->email;
         $cliente->save();
 
-        return redirect()->route('clientes.index');
+        return redirect()->route('clientes.index')
+            ->with('success', 'Cliente atualizado com sucesso'); 
+    }
+
+    public function destroy(int $client)
+    {
+        $cliente = Client::findOrFail($client);
+        $cliente->delete();
+
+        return redirect()->route('clientes.index')
+            ->with('success', 'Cliente excluido com sucesso'); 
     }
 }

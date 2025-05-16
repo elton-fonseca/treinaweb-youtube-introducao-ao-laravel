@@ -17,7 +17,7 @@
                         </a>
                     </div>
                     <div class="hidden md:flex items-center space-x-1">
-                        <a href="" class="py-4 px-2 text-blue-500 border-b-2 border-blue-500 font-semibold">Clientes</a>
+                        <a href="{{ route('clientes.index') }}" class="py-4 px-2 text-blue-500 border-b-2 border-blue-500 font-semibold">Clientes</a>
                     </div>
                 </div>
             </div>

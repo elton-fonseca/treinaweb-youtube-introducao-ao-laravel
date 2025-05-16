@@ -30,4 +30,23 @@ class ClienteController extends Controller
 
         return redirect()->route('clientes.index');
     }
+
+    public function edit(int $client)
+    {
+        $cliente = Client::find($client);
+
+        return view('clientes.edit', [
+            'cliente' => $cliente
+        ]);
+    }
+
+    public function update(int $client, Request $request)
+    {
+        $cliente = Client::find($client);
+        $cliente->nome = $request->nome;
+        $cliente->email = $request->email;
+        $cliente->save();
+
+        return redirect()->route('clientes.index');
+    }
 }

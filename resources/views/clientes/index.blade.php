@@ -33,7 +33,7 @@
                         <td class="py-3 px-4">{{ $cliente->email }}</td>
                         <td class="py-3 px-4 text-center">
                             <div class="flex justify-center space-x-2">
-                                <a href="" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-3 rounded text-sm">
+                                <a href="{{ route('clientes.edit', $cliente) }}" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-3 rounded text-sm">
                                     Editar
                                 </a>
                                 

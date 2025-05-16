@@ -23,6 +23,11 @@ class ClienteController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'nome' => ['required', 'min:2'],
+            'email' => ['required', 'email']
+        ]);
+
         $cliente = new Client;
         $cliente->nome = $request->nome;
         $cliente->email = $request->email;
@@ -42,6 +47,11 @@ class ClienteController extends Controller
 
     public function update(int $client, Request $request)
     {
+         $request->validate([
+            'nome' => ['required', 'min:2'],
+            'email' => ['required', 'email']
+        ]);
+        
         $cliente = Client::find($client);
         $cliente->nome = $request->nome;
         $cliente->email = $request->email;
